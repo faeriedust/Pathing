@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="PathingTests.fs" />
+    <Compile Include="PathParsingTests.fs" />
+    <Compile Include="PathingValidationTests.fs" />
   </ItemGroup>
 
   <ItemGroup>
