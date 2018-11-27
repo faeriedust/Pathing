@@ -1,8 +1,10 @@
 namespace Pathing.Tests
 
 open Xunit
+open Pathing
 
-module UnitTests = 
+module PathConstructionTests = 
   [<Fact>]
-  let ``My test`` () =
-    Assert.True(true);
+  let ``Can construct a path`` () =
+    let x: RelativeDirectoryPath = "C:\\"
+    ()

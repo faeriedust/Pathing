@@ -1,5 +1,3 @@
 namespace Pathing
 
-module Say =
-    let hello name =
-        printfn "Hello %s" name
+type RelativeDirectoryPath = string
