@@ -5,6 +5,7 @@ namespace Pathing.Tests.CSharp {
     [Fact]
     public void Test1() {
       Assert.True(true);
+      Pathing.ToAbsoluteDirectoryPath("k");
     }
   }
 }

@@ -20,7 +20,25 @@ module PathingTests =
   [<Fact>]
   let ``Can construct RelativeFilePath`` () =
     Pathing.ToRelativeFilePath "x.txt" |> ignore
+  
+
 
   [<Fact>]
-  let ``ad`` () =
-    Pathing.ToAbsoluteDirectoryPath null |> ignore
+  let ``Cannot construct AbsoluteDirectoryPath from null`` () =
+    Assert.Throws<ArgumentNullException> (fun () -> 
+      Pathing.ToAbsoluteDirectoryPath null |> ignore) |> ignore
+
+  [<Fact>]
+  let ``Cannot construct RelativeDirectoryPath from null`` () =
+    Assert.Throws<ArgumentNullException> (fun () -> 
+      Pathing.ToRelativeDirectoryPath null |> ignore) |> ignore
+
+  [<Fact>]
+  let ``Cannot construct AbsoluteFilePath from null`` () =
+    Assert.Throws<ArgumentNullException> (fun () -> 
+      Pathing.ToAbsoluteFilePath null |> ignore) |> ignore
+
+  [<Fact>]
+  let ``Cannot construct RelativeFilePath from null`` () =
+    Assert.Throws<ArgumentNullException> (fun () -> 
+      Pathing.ToRelativeFilePath null |> ignore) |> ignore
