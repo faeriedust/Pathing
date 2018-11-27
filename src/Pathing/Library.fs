@@ -6,23 +6,24 @@ type AbsoluteFilePath = string
 type RelativeFilePath = string
 
 module Pathing =
-
-  let ToAbsoluteDirectoryPath path:string = 
+  let private checkNotNullOrEmpty path =
     match path with
-    | null -> nullArg "path"
-    | _ -> path
+    | null -> nullArg "path" 
+    | "" -> invalidArg "path" "'' is not a valid path."
+    | _ -> ()
 
-  let ToRelativeDirectoryPath path:string = 
-    match path with
-    | null -> nullArg "path"
-    | _ -> path
+  let ToAbsoluteDirectoryPath (path:string) = 
+    checkNotNullOrEmpty path
+    path
 
-  let ToAbsoluteFilePath path:string = 
-    match path with
-    | null -> nullArg "path"
-    | _ -> path
+  let ToRelativeDirectoryPath (path:string) = 
+    checkNotNullOrEmpty path
+    path
 
-  let ToRelativeFilePath path:string =
-    match path with
-    | null -> nullArg "path"
-    | _ -> path
+  let ToAbsoluteFilePath (path:string) = 
+    checkNotNullOrEmpty path
+    path
+
+  let ToRelativeFilePath (path:string) =
+    checkNotNullOrEmpty path
+    path
