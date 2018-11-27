@@ -1,0 +1,38 @@
+MVP:
+Differentiate between relative and absolute paths
+Differentiate between file and directory paths
+
+Given a string, ability to construct a paths
+Given a path, ability to construct a string
+
+Work on differing operating systems (Linux and Windows)
+
+Given a string, validate that it's a valid path (may throw exception?)
+	Not null and not empty
+	Ability to easily add validation rules.
+		Suggestion to make an inheritable directoryName class with extra rules
+	
+Shouldnt throw exceptions when working with valid paths
+
+Able to tell if two paths are equal
+
+
+Extra:
+Given any path, find it's parent directory. 
+	The parent directory of root directory is itself.
+
+Combine an absolute directory with a relative file/directory to make an absolute file/directory.
+Given an absolute/relative directory and a directory name, construct an absolute/relative directory
+Given an absolute/relative directory and a file name, construct an absolute/relative file
+
+Handle .. and .
+	
+	
+Low prio:
+Ability to differentiate beteen what operating system a path is valid in.
+	Should be optional
+	
+Add helpful file system interaction methods (such as finding child directories)
+	Should be completely separate from modeling code
+
+Differentiate between a root directory and a nonroot directory

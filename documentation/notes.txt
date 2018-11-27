@@ -1,0 +1,14 @@
+Parsing
+	Can throw an exception
+	Almost pure
+
+Modeling
+	Lacks operating system specific code
+	Completely pure
+
+Serialization
+	Almost pure
+
+Interaction with the filesystem
+	Impure
+
