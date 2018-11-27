@@ -6,29 +6,22 @@ type AbsoluteFilePath = string
 type RelativeFilePath = string
 
 module Pathing =
-  let ToAbsoluteDirectoryPath p = p
-  let ToRelativeDirectoryPath p = p
-  let ToAbsoluteFilePath p = p
-  let ToRelativeFilePath p = p
+  let ToAbsoluteDirectoryPath path:string = 
+    match path with
+    | Null -> nullArg "path"
+    | _ -> path
 
+  let ToRelativeDirectoryPath path:string = 
+    match path with
+    | Null -> nullArg "path"
+    | _ -> path
 
+  let ToAbsoluteFilePath path:string = 
+    match path with
+    | Null -> nullArg "path"
+    | _ -> path
 
-//type Foo() = class end
-
-//type Test() =
-//    member this.AcceptFoo(foo:Foo) = //passed from C#
-//        if isNull foo then nullArg "foo"
-//        else ...
-
-//    member this.AcceptFoo2(foo:Foo) = //passed from C#
-//        match foo with
-//        | Null -> nullArg "foo"
-//        | _ -> ...
-
-//    member this.AcceptBoxedFoo(boxedFoo:obj) =
-//        let foo : Foo = safeUnbox boxedFoo
-//        ...
-
-//    member this.ReturnFoo() : Foo = //returning to C#
-//        if (test) then new Foo()
-//        else nil
+  let ToRelativeFilePath path:string =
+    match path with
+    | Null -> nullArg "path"
+    | _ -> path

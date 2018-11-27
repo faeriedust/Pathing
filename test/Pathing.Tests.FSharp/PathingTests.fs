@@ -21,3 +21,6 @@ module PathingTests =
   let ``Can construct RelativeFilePath`` () =
     Pathing.ToRelativeFilePath "x.txt" |> ignore
 
+  [<Fact>]
+  let ``ad`` () =
+    Pathing.ToAbsoluteDirectoryPath null |> ignore
