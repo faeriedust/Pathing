@@ -9,12 +9,13 @@ module PathParsingTests =
 
   [<Fact>]
   let ``Relative directory path "x" has one segment`` () =
-   RelativeDirectoryPath.Create "x"
-    |> fun p -> p.Segments
-    |> Seq.length
-    |> fun segmentCount -> Assert.Equal(1, segmentCount)  
+   let path = RelativeDirectoryPath.Create "x" in
+   let segmentCount = path.Segments |> Seq.length in
+   Assert.Equal(1, segmentCount)
     
   [<Fact>]
   let ``Relative directory path ".\\x" has two segments`` () =
     let expected = ["."; "x"] |> Seq.map PathSegment.Create in
-    RelativeDirectoryPath.Create ".\\x" |> fun p -> Assert.Equal<string>(expected |> Seq.map(fun x->x.Name), p.Segments |> Seq.map(fun x->x.Name))
+    let path = RelativeDirectoryPath.Create ".\\x" in 
+    let getName = fun (x:PathSegment) -> x.Name in
+    Assert.Equal<string>(expected |> Seq.map getName, path.Segments |> Seq.map getName)
