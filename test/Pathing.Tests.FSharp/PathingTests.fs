@@ -4,7 +4,7 @@ open Xunit
 open Pathing
 open System
 
-module PathConstructionTests = 
+module PathingTests = 
   [<Fact>]
   let ``Can construct AbsoluteDirectoryPath`` () =
     Pathing.ToAbsoluteDirectoryPath "C:\\" |> ignore
