@@ -1,5 +1,7 @@
 namespace Pathing
 
+open System
+
 type PathSegment(name) =
   member this.Name = name
 
@@ -10,7 +12,7 @@ type AbstractPath(path) =
      | "" -> invalidArg "path" "'' is not a valid path."
      | _ -> ()
      
-  member this.Segments = Seq.singleton path
+  member this.Segments = path.Split('\\', '/')
 
 type AbsoluteDirectoryPath(path) =
   inherit AbstractPath(path)

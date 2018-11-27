@@ -10,4 +10,11 @@ module PathParsingTests =
     new RelativeDirectoryPath "x"
     |> fun p -> p.Segments
     |> Seq.length
-    |> fun segmentCount -> Assert.Equal(1, segmentCount)
+    |> fun segmentCount -> Assert.Equal(1, segmentCount)  
+    
+  [<Fact>]
+  let ``Relative directory path ".\\x" has two segments`` () =
+    new RelativeDirectoryPath ".\\x"
+    |> fun p -> p.Segments
+    |> Seq.length
+    |> fun segmentCount -> Assert.Equal(2, segmentCount)
