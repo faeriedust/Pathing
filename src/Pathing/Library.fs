@@ -1,12 +1,16 @@
 namespace Pathing
 
+type PathSegment(name) =
+  member this.Name = name
+
 [<AbstractClass>]
 type AbstractPath(path) =    
   do match path with
      | null -> nullArg "path" 
      | "" -> invalidArg "path" "'' is not a valid path."
      | _ -> ()
-  member this.Path = path
+     
+  member this.Segments = Seq.singleton path
 
 type AbsoluteDirectoryPath(path) =
   inherit AbstractPath(path)
