@@ -1,10 +1,10 @@
-namespace Pathing.Tests
+namespace Pathing.Tests.FSharp
 
 open Xunit
 open Pathing
 
 module PathConstructionTests = 
   [<Fact>]
-  let ``Can construct a path`` () =
+  let ``Test1`` () =
     let x: RelativeDirectoryPath = "C:\\"
     ()
