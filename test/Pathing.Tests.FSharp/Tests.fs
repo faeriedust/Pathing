@@ -2,25 +2,22 @@ namespace Pathing.Tests.FSharp
 
 open Xunit
 open Pathing
+open System
 
 module PathConstructionTests = 
   [<Fact>]
   let ``Can construct AbsoluteDirectoryPath`` () =
-    let x: AbsoluteDirectoryPath = "C:\\"
-    ()
+    Pathing.ToAbsoluteDirectoryPath "C:\\" |> ignore
 
   [<Fact>]
   let ``Can construct RelativeDirectoryPath`` () =
-    let x: RelativeDirectoryPath = "."
-    ()
+    Pathing.ToRelativeDirectoryPath "." |> ignore
 
   [<Fact>]
   let ``Can construct AbsoluteFilePath`` () =
-    let x: AbsoluteFilePath = "C:\\x.txt"
-    ()
+    Pathing.ToAbsoluteFilePath "C:\\x.txt" |> ignore
 
   [<Fact>]
   let ``Can construct RelativeFilePath`` () =
-    let x: AbsoluteFilePath = "x.txt"
-    ()
+    Pathing.ToRelativeFilePath "x.txt" |> ignore
 
