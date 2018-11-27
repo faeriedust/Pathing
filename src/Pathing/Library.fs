@@ -12,7 +12,9 @@ type AbstractPath(path) =
      | "" -> invalidArg "path" "'' is not a valid path."
      | _ -> ()
      
-  member this.Segments = path.Split('\\', '/')
+  member this.Segments = 
+    path.Split('\\', '/') 
+    |> Seq.map (fun p -> new PathSegment(p))
 
 type AbsoluteDirectoryPath(path) =
   inherit AbstractPath(path)
