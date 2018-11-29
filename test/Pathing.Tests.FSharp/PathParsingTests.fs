@@ -2,6 +2,7 @@
 
 open Xunit
 open Pathing
+open System.Collections.Generic
 
 module PathParsingTests =
 
@@ -17,3 +18,9 @@ module PathParsingTests =
     let path = RelativeDirectoryPath.Create ".\\x" in 
     let getName = fun (x:PathSegment) -> x.Name in
     Assert.Equal<string>(expected |> Seq.map getName, path.Segments |> Seq.map getName)
+
+  [<Fact>]
+  let ``Can create relative directory path from segments`` () = 
+    let path = RelativeDirectoryPath.Create ".\\x" in
+    let newPath = RelativeDirectoryPath path.Segments in
+    ()
